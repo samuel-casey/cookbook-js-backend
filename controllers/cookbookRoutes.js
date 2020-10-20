@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
 // Route to update a cookbook
 router.put('/:id', async (req, res) => {
 	const cookbook = await Cookbook.findByIdAndUpdate(
-		{ _id: req.params._id },
+		req.params.id,
 		{ title: req.body.title, yearPublished: req.body.yearPublished },
 		{ new: true }
 	);
