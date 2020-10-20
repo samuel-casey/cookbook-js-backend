@@ -34,8 +34,8 @@ router.put('/', async (req, res) => {
 	res.json({ status: 200, msg: 'item updated', data: cookbook });
 });
 // Route to delete the cookbook by title
-router.delete('/:title', async (req, res) => {
-	const cookbook = await Cookbook.findOneAndDelete({ title: req.params.title });
+router.delete('/:id', async (req, res) => {
+	const cookbook = await Cookbook.findOneAndDelete({ _id: req.params.id });
 	res.json({ status: 200, msg: 'cookbook deleted' });
 });
 module.exports = router;
