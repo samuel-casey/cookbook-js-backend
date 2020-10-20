@@ -6,8 +6,8 @@ const DB = mongoose.connection;
 mongoose.connect(MONGODBURI, config);
 mongoose.Promise = Promise;
 
-DB.on('open', () => console.log('You are connected to Mongo'))
-	.on('close', () => console.log('You are disconnected to Mongo'))
+DB.on('open', () => console.log('Connected to Mongo'))
+	.on('close', () => console.log('Disconnected from Mongo'))
 	.on('error', (err) => console.log(err));
 
 module.exports = mongoose;
