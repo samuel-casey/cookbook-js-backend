@@ -31,9 +31,9 @@ router.put('/', async (req, res) => {
 		{ title: 'dining in' },
 		{ new: true }
 	);
-	res.json({ status: 200, msg: 'item updated', data: cookbook });
+	res.json({ status: 200, message: 'updated item', data: cookbook });
 });
-// Route to delete the cookbook by title
+// Route to delete the cookbook by _id
 router.delete('/:id', async (req, res) => {
 	const cookbook = await Cookbook.findOneAndDelete({ _id: req.params.id });
 	res.json({ status: 200, msg: 'cookbook deleted' });
